@@ -1,43 +1,124 @@
-/* Simple, mobile‑friendly styles */
-* { box-sizing: border-box; }
 body {
-  margin: 0;
-  font-family: system-ui, sans-serif;
-  background: #fdfdfd;
-  color: #222;
-  line-height: 1.6;
+	margin:0;
+	padding:0;
+	font-family: helvetica, sans-serif;
+	color:#333;
+	background-color:white;
+	}
+p {
+	font-family: helvetica, sans-serif;
+	margin:0 0 1em 0;
+	padding:0;
+	}
+#Content>p {text-indent:2em; margin:0;}
+#Content>p+p {text-indent:2em; margin-top: 1ex;}
+
+title {
+	font-size: xx-large;
+	margin-bottom: 0.25ex;
+	}
+h1 {
+	font-size: x-large;
+	margin-bottom: 0.25ex;
+	}
+h2 {
+	font-size: large;
+	margin-bottom: 0.25ex;
+	}
+
+a {
+	text-decoration:none;
+	font-family:verdana, arial, helvetica, sans-serif;
+	}
+a:hover {background-color:#ccc;}
+
+#Header {
+        display: flex;
+	font-weight:600;
+	font-size: x-large;	/* should be same as an h1 header */
+	margin:20px 0 10px 0;
+	padding:0 0 2.0ex 20px;
+	border-style:solid;
+	border-color:black;
+	border-width:1px 0;
+	background-color:#eee;
+	text-align: center;
+
+	voice-family:inherit;
+	height:1ex+3px;	/* UNTESTED!  Was 14px */
+	}
+
+.HeaderInner {
+    padding: 5px;
+    width: 100vh;
 }
-header {
-  padding: 3rem 1rem;
-  text-align: center;
-  background: #333;
-  color: #fff;
+#left {
+    text-align:left;
 }
-nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 1rem;
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
+#center {
+    text-align:center;
 }
-nav a {
-  color: #fff;
-  text-decoration: none;
+#right {
+    text-align:right;
 }
-main {
-  padding: 2rem;
-  max-width: 800px;
-  margin: auto;
+
+#Content {
+	/* Left margin is menu width + 3em
+	 */
+	margin:0 50px 50px 11em;
+	padding:10px;
+	}
+
+#Menu {
+	position:absolute;
+	top:80px;
+	left:20px;
+	width:120px;
+	padding:0.5em;
+	background-color:#eee;
+	border:1px dashed #999;
+	voice-family:inherit;
+	width:8em;
+	}
+
+body>#Menu {width:8em;}
+
+@media print {
+	#Content {
+		/* Left margin is menu width + 3em
+		 */
+		margin:0 50px 50px 0;
+		padding:10px;
+		}
+
+	#Menu {
+		  display: none;
+		}
+
 }
-section {
-  margin-bottom: 3rem;
+
+/* For convenience */
+.centered {
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	}
+
+.right {
+	float:right;
+	margin:0px;
+	}
+
+.notebox {
+	background-color:#eee;
+	border:1px dashed #999;
+	margin: 15px;
+	font-size:small;
+	text-indent: 0;
 }
-h1, h2 {
-  margin-top: 0;
-}
-footer {
-  text-align: center;
-  padding: 1rem;
-  background: #eee;
-}
+
+/*
+Local Variables:
+compile-command: "(cd ~/WWW; upload sitestyle.css)"
+End:
+*/

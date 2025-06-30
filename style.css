@@ -1,76 +1,36 @@
-/*
-  CSS perpetual motion machine
-*/
-
 body {
-  background-color: #333;
+  background-color: #ffffff;
+  color: #000000;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
 }
-
-.container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 100px;
-  height: 100px;
-  margin-top: -50px;
-  margin-left: -50px;
-
-  /* Rotate without tweening, 90 degrees CCW every second */
-  animation: rotate 4s steps(4) infinite;
-  -webkit-animation: rotate 4s steps(4) infinite;
+#container {
+  width: 90%;
+  max-width: 800px;
+  margin: auto;
 }
-
-.box {
-  position: absolute;
-  background-color: white;
+#header, #footer {
+  background-color: #e0e0e0;
+  padding: 1em;
+  text-align: center;
 }
-
-/* This one stays put */
-.box1 {
-  top: 0;
-  left: 0;
-  width: 50%;
-  height: 100%;
+#nav {
+  list-style-type: none;
+  padding: 0;
+  margin: 1em 0;
 }
-
-/* This one drops down */
-.box2 {
-  top: 0;
-  left: 50%;
-  width: 50%;
-  height: 50%;
-  
-  animation-name: drop;
-  animation-duration: 1s;
-  animation-timing-function: cubic-bezier;
-  animation-iteration-count: infinite;
-  
-  -webkit-animation-name: drop;
-  -webkit-animation-duration: 1s;
-  -webkit-animation-timing-function: cubic-bezier;
-  -webkit-animation-iteration-count: infinite;
+#nav li {
+  display: inline;
+  margin-right: 1em;
 }
-
-@keyframes drop {
-  0%   { top: 0%;  left: 50%; }
-  50%  { top: 50%; left: 50%; }
-  100% { top: 50%; left: 50%; }
+#nav a {
+  text-decoration: none;
+  color: #000080;
 }
-
-@-webkit-keyframes drop {
-  0%   { top: 0%;  left: 50%; }
-  50%  { top: 50%; left: 50%; }
-  100% { top: 50%; left: 50%; }
+#main {
+  padding: 1em;
 }
-
-@keyframes rotate {
-  from { transform: rotate(0deg);    }
-  to   { transform: rotate(-360deg); }
+h1, h2 {
+  color: #333333;
 }
-
-@-webkit-keyframes rotate {
-  from { -webkit-transform: rotate(0deg);    }
-  to   { -webkit-transform: rotate(-360deg); }
-}
-
-

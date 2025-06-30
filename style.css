@@ -1,18 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
 
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 * {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
 body {
-  margin: 0;
-  padding: 0;
   background: #121212;
   color: #f0f0f0;
   font-family: 'Fira Code', monospace;
   line-height: 1.5;
+  display: flex;
+  flex-direction: column;
 }
 
 a {
@@ -22,29 +26,29 @@ a {
 #container {
   width: 90%;
   max-width: 960px;
-  margin: auto;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 
-header,
+#main {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.gallery {
+  padding: 2rem 0;
+}
+
 footer {
   text-align: center;
   padding: 1.5rem 1rem;
   background: #1e1e1e;
   border-top: 2px solid #333;
-  border-bottom: 2px solid #333;
-}
-
-header h1 {
-  margin: 0.5rem 0;
-  color: #ffffff;
-}
-
-.gallery {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1.5rem;
-  padding: 2rem 0;
 }
 
 figure.anim {
@@ -79,68 +83,14 @@ figcaption {
   height: 20px;
   border-radius: 50%;
   background: #66ff7d;
-  -webkit-animation: bounce 0.6s ease-in-out infinite alternate;
-  -moz-animation: bounce 0.6s ease-in-out infinite alternate;
-  -o-animation: bounce 0.6s ease-in-out infinite alternate;
   animation: bounce 0.6s ease-in-out infinite alternate;
 }
 
-.b1 {
-  left: 0;
-  -webkit-animation-delay: 0s;
-  animation-delay: 0s;
-}
-
-.b2 {
-  left: 30px;
-  -webkit-animation-delay: 0.2s;
-  animation-delay: 0.2s;
-}
-
-.b3 {
-  left: 60px;
-  -webkit-animation-delay: 0.4s;
-  animation-delay: 0.4s;
-}
-
-@-webkit-keyframes bounce {
-  0% {
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-  }
-  100% {
-    -webkit-transform: translateY(-60px);
-    transform: translateY(-60px);
-  }
-}
-
-@-moz-keyframes bounce {
-  0% {
-    -moz-transform: translateY(0);
-    transform: translateY(0);
-  }
-  100% {
-    -moz-transform: translateY(-60px);
-    transform: translateY(-60px);
-  }
-}
-
-@-o-keyframes bounce {
-  0% {
-    -o-transform: translateY(0);
-    transform: translateY(0);
-  }
-  100% {
-    -o-transform: translateY(-60px);
-    transform: translateY(-60px);
-  }
-}
+.b1 { left: 0; animation-delay: 0s; }
+.b2 { left: 30px; animation-delay: 0.2s; }
+.b3 { left: 60px; animation-delay: 0.4s; }
 
 @keyframes bounce {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(-60px);
-  }
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-60px); }
 }

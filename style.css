@@ -1,36 +1,55 @@
+/* Simple, compatible styling */
+* { box-sizing: border-box; }
 body {
-  background-color: #ffffff;
-  color: #000000;
-  font-family: Arial, Helvetica, sans-serif;
   margin: 0;
   padding: 0;
+  background: #fafafa;
+  color: #222;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5;
 }
-#container {
-  width: 90%;
-  max-width: 800px;
-  margin: auto;
+#container { width: 90%; max-width: 960px; margin: auto; }
+header, footer { text-align: center; padding: 1.5rem 1rem; background: #e0e0e0; }
+header h1 { margin: 0.5rem 0; }
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 2rem 0;
 }
-#header, #footer {
-  background-color: #e0e0e0;
-  padding: 1em;
+figure.anim {
+  width: 140px;
+  margin: 0;
   text-align: center;
 }
-#nav {
-  list-style-type: none;
-  padding: 0;
-  margin: 1em 0;
+figure svg, figure div {
+  display: block;
+  margin: auto;
 }
-#nav li {
-  display: inline;
-  margin-right: 1em;
+figcaption {
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
 }
-#nav a {
-  text-decoration: none;
-  color: #000080;
+
+/* Bouncing Balls animation */
+.bouncing-balls {
+  height: 100px;
+  position: relative;
 }
-#main {
-  padding: 1em;
+.bouncing-balls .ball {
+  position: absolute;
+  bottom: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #0074D9;
+  animation: bounce 0.6s ease-in-out infinite alternate;
 }
-h1, h2 {
-  color: #333333;
+.b1 { left: 0; animation-delay: 0s; }
+.b2 { left: 30px; animation-delay: 0.2s; }
+.b3 { left: 60px; animation-delay: 0.4s; }
+@keyframes bounce {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-60px); }
 }

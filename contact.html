@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ryan Vandervelde</title>
+  <title>Contact - ryan vandervelde</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
@@ -53,30 +53,24 @@
       display: flex;
       justify-content: center;
       align-items: center;
-    }
-
-    .gallery {
-      padding: 2rem 0;
-    }
-
-    figure.anim {
-      width: 140px;
-      margin: 0;
       text-align: center;
     }
 
-    figcaption {
-      font-size: 0.875rem;
-      margin-top: 0.5rem;
-      color: #aaa;
+    /* --- Contact Info Styling --- */
+    .contact-info {
+        font-size: 1.25rem;
     }
     
+    .contact-info a {
+        font-weight: bold;
+    }
+
     /* --- Sitemap Navigation --- */
     .sitemap {
         padding: 2rem 1rem;
         text-align: center;
         border-top: 2px solid #333;
-        margin-top: auto; /* Pushes the sitemap down when content is short */
+        margin-top: auto;
     }
 
     .sitemap ul {
@@ -85,7 +79,7 @@
         margin: 0;
         display: flex;
         justify-content: center;
-        gap: 2rem; /* Adds space between links */
+        gap: 2rem;
     }
 
     .sitemap a {
@@ -100,55 +94,17 @@
       background: #1e1e1e;
       border-top: 2px solid #333;
     }
-
-    /* --- Bouncing Balls Animation --- */
-    .bouncing-balls {
-      height: 100px;
-      position: relative;
-    }
-
-    .bouncing-balls .ball {
-      position: absolute;
-      bottom: 0;
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
-      background: #66ff7d;
-      -webkit-animation: bounce 0.6s ease-in-out infinite alternate;
-      -moz-animation: bounce 0.6s ease-in-out infinite alternate;
-      animation: bounce 0.6s ease-in-out infinite alternate;
-    }
-
-    .b1 { left: 0; -webkit-animation-delay: 0s; animation-delay: 0s; }
-    .b2 { left: 30px; -webkit-animation-delay: 0.2s; animation-delay: 0.2s; }
-    .b3 { left: 60px; -webkit-animation-delay: 0.4s; animation-delay: 0.4s; }
-
-    /* Keyframes with vendor prefixes */
-    @-webkit-keyframes bounce {
-      0% { -webkit-transform: translateY(0); transform: translateY(0); }
-      100% { -webkit-transform: translateY(-60px); transform: translateY(-60px); }
-    }
-    @-moz-keyframes bounce {
-      0% { -moz-transform: translateY(0); transform: translateY(0); }
-      100% { -moz-transform: translateY(-60px); transform: translateY(-60px); }
-    }
-    @keyframes bounce {
-      0% { transform: translateY(0); }
-      100% { transform: translateY(-60px); }
-    }
   </style>
 </head>
 <body>
   <div id="container">
     <main id="main">
-      <div class="gallery">
-        <figure class="anim bouncing-balls">
-          <div class="ball b1"></div>
-          <div class="ball b2"></div>
-          <div class="ball b3"></div>
-          <figcaption>coming soon...</figcaption>
-        </figure>
-      </div>
+        <!-- Replaced the animation with contact information -->
+        <div class="contact-info">
+            <p>
+                <a href="mailto:mail@ryanvandervelde.com">mail@ryanvandervelde.com</a>
+            </p>
+        </div>
     </main>
 
     <!-- Sitemap Section -->

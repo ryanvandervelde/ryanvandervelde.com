@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About | Ryan Vandervelde</title>
+  <title>Contact - ryan vandervelde</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
@@ -53,48 +53,21 @@
       display: flex;
       justify-content: center;
       align-items: center;
-    }
-
-    .gallery {
-      padding: 2rem 0;
       text-align: center;
     }
 
-    .gallery img {
-      max-width: 100%;
-      height: auto;
+    /* --- Image Display Styling --- */
+    .image-display img {
+        max-width: 100%;
+        height: auto;
     }
 
-    figure {
-      margin: 0;
-    }
-
-    /* --- Blog Links --- */
-    .blog-links {
-      margin-top: 2rem;
-    }
-
-    .blog-links ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .blog-links li {
-      margin: 0.75rem 0;
-    }
-
-    .blog-links a {
-      font-size: 1.1rem;
-      font-weight: bold;
-    }
-    
     /* --- Sitemap Navigation --- */
     .sitemap {
         padding: 2rem 1rem;
         text-align: center;
         border-top: 2px solid #333;
-        margin-top: auto; /* Pushes the sitemap down when content is short */
+        margin-top: auto;
     }
 
     .sitemap ul {
@@ -103,7 +76,7 @@
         margin: 0;
         display: flex;
         justify-content: center;
-        gap: 2rem; /* Adds space between links */
+        gap: 2rem;
     }
 
     .sitemap a {
@@ -123,21 +96,13 @@
 <body>
   <div id="container">
     <main id="main">
-      <div class="gallery">
-        <figure>
-          <img src="park_rainbow_flash.gif" alt="Park Rainbow Flash GIF">
-        </figure>
-        
-        <div class="blog-links">
-          <ul>
-            <li><a href="2025.html">2025</a></li>
-            <li><a href="2024.html">2024</a></li>
-            <li><a href="2023.html">2023</a></li>
-          </ul>
+        <!-- Display image.jpeg in center -->
+        <div class="image-display">
+            <img src="image.jpeg" alt="Image">
         </div>
-      </div>
     </main>
 
+    <!-- Sitemap Section -->
     <nav class="sitemap">
         <ul>
             <li><a href="index.html">home</a></li>

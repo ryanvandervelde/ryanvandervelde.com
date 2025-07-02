@@ -1,71 +1,63 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
 
-/* --- Basic Setup --- */
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  background: #121212;
-  color: #C0C0C0; /* Classic light gray/silver color */
-  font-family: "Times New Roman", Times, serif; /* Iconic 90s serif font */
-  line-height: 1.5;
-  display: flex;
-  flex-direction: column;
-}
-
 * {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
+body {
+  margin: 0;
+  padding: 0;
+  background: #121212;
+  color: #f0f0f0;
+  font-family: 'Fira Code', monospace;
+  line-height: 1.5;
+}
+
 a {
-  color: #0000FF; /* Classic hyperlink blue */
-  text-decoration: underline;
+  color: #66ccff;
 }
 
-a:visited {
-  color: #800080; /* Classic visited link purple */
-}
-
-/* --- Layout --- */
 #container {
   width: 90%;
   max-width: 960px;
-  margin: 20px auto; /* Added margin for the border to be visible */
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-  border: 2px outset #888888; /* 90s style 3D border */
-  padding: 0 20px; /* Padding to keep content from touching the new border */
+  margin: auto;
 }
 
-#main {
-  flex-grow: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
+header,
 footer {
   text-align: center;
   padding: 1.5rem 1rem;
   background: #1e1e1e;
-  border-top: 2px outset #888888; /* 90s style 3D border */
-  margin: 0 -20px; /* Extend footer to the container's edge */
-  padding-left: calc(1rem + 20px);
-  padding-right: calc(1rem + 20px);
+  border-top: 2px solid #333;
+  border-bottom: 2px solid #333;
 }
 
-/* --- Gallery & Figures --- */
+header h1 {
+  margin: 0.5rem 0;
+  color: #ffffff;
+}
+
 .gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
   padding: 2rem 0;
 }
 
-figure {
+figure.anim {
+  width: 140px;
   margin: 0;
   text-align: center;
+}
+
+figure svg,
+figure div {
+  display: block;
+  margin: auto;
+  background: transparent;
 }
 
 figcaption {

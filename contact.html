@@ -86,8 +86,19 @@
         font-size: 1rem;
         font-weight: bold;
     }
+      .ad-banner img {
+            max-width: 100%;
+            height: auto;
+            max-height: 150px;
+            display: block;
+            margin: 0 auto;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+          }
 
-    /* --- Footer --- */
+          .ad-banner img.active {
+            opacity: 1;
+          }
     #footer {
       text-align: center;
       padding: 1.5rem 1rem;
@@ -99,7 +110,7 @@
 <body>
   <div id="container">
     <main id="main">
-        <!-- Replaced the animation with contact information -->
+     
         <div class="contact-info">
             <p>
                 <a href="mailto:mail@ryanvandervelde.com">mail@ryanvandervelde.com</a>
@@ -107,7 +118,7 @@
         </div>
     </main>
 
-    <!-- Sitemap Section -->
+   
     <nav class="sitemap">
         <ul>
             <li><a href="index.html">home</a></li>
@@ -115,10 +126,44 @@
             <li><a href="contact.html">contact</a></li>
         </ul>
     </nav>
-
+    
+    <div class="ad-banner">
+          <img id="ad-image" src="" alt="Advertisement">
+    </div>
+    
     <footer id="footer">
       <p>&copy; 2025 ryan vandervelde</p>
     </footer>
   </div>
+  <script>
+      const adImages = [
+        'hummer.gif',
+        'dealani.gif',
+        'flagman.gif',
+        'drugsplash.gif'
+      ];
+
+      let currentIndex = 0;
+      const adImageElement = document.getElementById('ad-image');
+
+      function getRandomImage() {
+        const randomIndex = Math.floor(Math.random() * adImages.length);
+        return adImages[randomIndex];
+      }
+
+      function changeAdImage() {
+        adImageElement.classList.remove('active');
+        
+        setTimeout(() => {
+          adImageElement.src = getRandomImage();
+          adImageElement.classList.add('active');
+        }, 250);
+      }
+
+      adImageElement.src = getRandomImage();
+      adImageElement.classList.add('active');
+
+      setInterval(changeAdImage, 3000);
+    </script>
 </body>
 </html>

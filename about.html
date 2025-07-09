@@ -9,7 +9,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
   
   <style>
-    /* --- Basic Setup --- */
     html, body {
       height: 100%;
       margin: 0;
@@ -38,7 +37,7 @@
         color: #ffffff;
     }
 
-    /* --- Layout and Centering --- */
+
     #container {
       width: 90%;
       max-width: 960px;
@@ -69,7 +68,7 @@
       margin: 0;
     }
 
-    /* --- Blog Links --- */
+
     .blog-links {
       margin-top: 2rem;
     }
@@ -89,12 +88,12 @@
       font-weight: bold;
     }
     
-    /* --- Sitemap Navigation --- */
+   
     .sitemap {
         padding: 2rem 1rem;
         text-align: center;
         border-top: 2px solid #333;
-        margin-top: auto; /* Pushes the sitemap down when content is short */
+        margin-top: auto;
     }
 
     .sitemap ul {
@@ -103,15 +102,26 @@
         margin: 0;
         display: flex;
         justify-content: center;
-        gap: 2rem; /* Adds space between links */
-    }
+        gap: 2rem;
 
     .sitemap a {
         font-size: 1rem;
         font-weight: bold;
     }
+      .ad-banner img {
+            max-width: 100%;
+            height: auto;
+            max-height: 150px;
+            display: block;
+            margin: 0 auto;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+          }
 
-    /* --- Footer --- */
+          .ad-banner img.active {
+            opacity: 1;
+          }
+
     #footer {
       text-align: center;
       padding: 1.5rem 1rem;
@@ -145,10 +155,44 @@
             <li><a href="contact.html">contact</a></li>
         </ul>
     </nav>
-
+    
+    <div class="ad-banner">
+          <img id="ad-image" src="" alt="Advertisement">
+    </div>
+    
     <footer id="footer">
       <p>&copy; 2025 ryan vandervelde</p>
     </footer>
   </div>
+  <script>
+      const adImages = [
+        'hummer.gif',
+        'dealani.gif',
+        'flagman.gif',
+        'drugsplash.gif'
+      ];
+
+      let currentIndex = 0;
+      const adImageElement = document.getElementById('ad-image');
+
+      function getRandomImage() {
+        const randomIndex = Math.floor(Math.random() * adImages.length);
+        return adImages[randomIndex];
+      }
+
+      function changeAdImage() {
+        adImageElement.classList.remove('active');
+        
+        setTimeout(() => {
+          adImageElement.src = getRandomImage();
+          adImageElement.classList.add('active');
+        }, 250);
+      }
+
+      adImageElement.src = getRandomImage();
+      adImageElement.classList.add('active');
+
+      setInterval(changeAdImage, 3000);
+    </script>
 </body>
 </html>

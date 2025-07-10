@@ -13,29 +13,59 @@
 <body>
   <div id="container">
     <main id="main">
-        <!-- Display image.jpeg in center -->
         <div class="image-display">
-            <img src="b0nb0.png" alt="b0nb0">
-        </div>
-    </main>
+                <img src="b0nb0.png" alt="b0nb0">
+              </div>
+            </main>
+            <div class="year-link-section">
+              <a href="2024.html">2024</a>
+            </div>
+            </main>
 
-    <!-- Year Link Section -->
-    <div class="year-link-section">
-        <a href="2024.html">2024</a>
-    </div>
+            <nav class="sitemap">
+              <ul>
+                <li><a href="index.html">home</a></li>
+                <li><a href="about.html">about</a></li>
+                <li><a href="contact.html">contact</a></li>
+              </ul>
+            </nav>
+            
+            <div class="ad-banner">
+              <img id="ad-image" src="" alt="Advertisement">
+            </div>
+            
+            <footer id="footer">
+              <p>&copy; 2025 ryan vandervelde</p>
+            </footer>
+          </div>
 
-    <!-- Sitemap Section -->
-    <nav class="sitemap">
-        <ul>
-            <li><a href="index.html">home</a></li>
-            <li><a href="about.html">about</a></li>
-            <li><a href="contact.html">contact</a></li>
-        </ul>
-    </nav>
+          <script>
+            const adImages = [
+              'hummer.gif',
+              'dealani.gif',
+              'flagmap.gif',
+              'drugsplash.gif'
+            ];
 
-    <footer id="footer">
-      <p>&copy; 2025 ryan vandervelde</p>
-    </footer>
-  </div>
+            const adImageElement = document.getElementById('ad-image');
+
+            function getRandomImage() {
+              const randomIndex = Math.floor(Math.random() * adImages.length);
+              return adImages[randomIndex];
+            }
+
+            function changeAdImage() {
+              adImageElement.classList.remove('active');
+              
+              setTimeout(() => {
+                adImageElement.src = getRandomImage();
+                adImageElement.classList.add('active');
+              }, 250);
+            }
+
+            adImageElement.src = getRandomImage();
+            adImageElement.classList.add('active');
+
+          </script>
 </body>
 </html>

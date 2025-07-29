@@ -8,23 +8,37 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
-  
 </head>
 <body>
   <div id="container">
     <main id="main">
       <div class="gallery">
         <figure>
-          <img src="park_rainbow_flash.gif" alt="Park Rainbow Flash GIF">
+          <img src="assets/park_rainbow_flash.gif" alt="Park Rainbow Flash GIF">
+        </figure>
+
+        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 20px;">
+          <img src="assets/ice.gif" alt="Ice" style="width: 100%; height: auto;">
+          <img src="assets/Image.jpeg" alt="Gallery Image" style="width: 100%; height: auto;">
+        </div>
+        <figure>
+          <img src="assets/lonely.gif" alt="Lonely GIF">
+        </figure>
+        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 20px;">
+            <img src="assets/field_of_dreams.png" alt="Field" style="width: 100%; height: auto;">
+            <img src="assets/b0nb0.png" alt="B0nb0" style="width: 100%; height: auto;">
+        </div>
+        <figure>
+          <img src="assets/index.gif" alt="Index GIF">
         </figure>
         
-        <div class="blog-links">
-          <ul>
-            <li><a href="2025.html">2025</a></li>
-            <li><a href="2024.html">2024</a></li>
-            <li><a href="2023.html">2023</a></li>
-          </ul>
-        </div>
+        <figure>
+          <img src="assets/drugsplash.gif" alt="Drugsplash GIF">
+        </figure>
+        
+        <figure>
+          <img src="assets/feedimage1.gif" alt="Feed Image GIF">
+        </figure>
       </div>
     </main>
 
@@ -37,19 +51,27 @@
     </nav>
     
     <div class="ad-banner">
-          <img id="ad-image" src="" alt="Advertisement">
+      <img id="ad-image" src="" alt="Advertisement">
     </div>
     
     <footer id="footer">
       <p>&copy; 2025 ryan vandervelde</p>
+      <div class="footer-logos">
+        <img src="assets/freeloader.gif" alt="Freeloader">
+        <img src="assets/cidlogo.gif" alt="CID Logo">
+        <img src="assets/lycos.gif" alt="Lycos">
+        <img src="assets/sunlogo.gif" alt="Sun Logo">
+      </div>
     </footer>
   </div>
+
   <script>
       const adImages = [
-        'hummer.gif',
-        'dealani.gif',
-        'flagmap.gif',
-        'drugsplash.gif'
+        'assets/hummer.gif',
+        'assets/dealani.gif',
+        'assets/flagmap.gif',
+        'assets/main3rudolph.gif',
+        'assets/cyberian_home.gif'
       ];
 
       let currentIndex = 0;
@@ -71,7 +93,6 @@
 
       adImageElement.src = getRandomImage();
       adImageElement.classList.add('active');
-
-    </script>
+  </script>
 </body>
 </html>

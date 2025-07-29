@@ -257,6 +257,19 @@ figcaption {
   font-size: 0.9rem;
   color: #aaa;
 }
+.footer-logos {
+  display: flex;
+  justify-content: space-between; /* even spacing */
+  align-items: center;
+  padding: 10px 40px;
+}
+
+.footer-logos img {
+  max-height: 50px;
+  flex: 1;
+  object-fit: contain;
+  padding: 0 10px;
+}
 
 /* Mobile Responsive */
 @media (max-width: 768px) {

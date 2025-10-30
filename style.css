@@ -87,6 +87,31 @@ figcaption {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
+/* Book List Section */
+.book-list {
+  width: 100%;
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 2rem;
+  text-align: left;
+}
+
+.book-list h2 {
+  margin-bottom: 1rem;
+  color: #66ccff;
+}
+
+.book-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.book-list li {
+  margin-bottom: 0.75rem;
+  line-height: 1.8;
+}
+
 /* Blog Links */
 .blog-links {
   margin-top: 2rem;
@@ -291,6 +316,11 @@ figcaption {
     padding: 1rem;
   }
 
+  .book-list {
+    max-width: 600px;
+    padding: 0 1rem;
+  }
+
   .blog-links ul {
     gap: 1rem;
   }
@@ -328,6 +358,10 @@ figcaption {
 @media (max-width: 480px) {
   .hero img, .gallery img {
     max-height: 30vh;
+  }
+
+  .book-list {
+    padding: 0 0.5rem;
   }
 
   .blog-links ul {

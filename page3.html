@@ -12,15 +12,12 @@
 <body>
   <div id="container">
     <main id="main">
-      <div class="gallery">
-        <figure>
-          <img src="assets/feedimage1.gif" alt="Feed Image GIF">
-        </figure>
-        <figure>
-            <img src="assets/feedimage3.gif" alt="Feed Image 3 GIF">
-        </figure>
-      </div>
-    
+        <div class="gallery">
+          <figure>
+            <img src="assets/feedimage1.gif" alt="FeedImage GIF">
+          </figure>
+        </div>
+      <div id="image-collage"></div>
     </main>
 
     <nav class="sitemap">
@@ -47,33 +44,65 @@
   </div>
 
   <script>
-      const adImages = [
-        'assets/hummer.gif',
-        'assets/dealani.gif',
-        'assets/flagmap.gif',
-        'assets/main3rudolph.gif',
-        'assets/cyberian_home.gif'
-      ];
+    // Ad banner script
+    const adImages = [
+      'assets/hummer.gif',
+      'assets/dealani.gif',
+      'assets/flagmap.gif',
+      'assets/main3rudolph.gif',
+      'assets/cyberian_home.gif'
+    ];
 
-      let currentIndex = 0;
-      const adImageElement = document.getElementById('ad-image');
+    const adImageElement = document.getElementById('ad-image');
 
-      function getRandomImage() {
-        const randomIndex = Math.floor(Math.random() * adImages.length);
-        return adImages[randomIndex];
+    function getRandomAdImage() {
+      const randomIndex = Math.floor(Math.random() * adImages.length);
+      return adImages[randomIndex];
+    }
+
+    adImageElement.src = getRandomAdImage();
+    adImageElement.classList.add('active');
+
+    // Collage setup
+    const collageImages = [
+      'books', 'Canadians', 'celebrity', 'censorship', 'comics', 'conspiracy',
+      'crime', 'disaster', 'disease', 'work', 'dumb', 'environment', 'failure',
+      'fashion', 'flamewar', 'food', 'genius', 'guns', 'hate', 'health', 'history',
+      'hoaxes', 'ideas', 'international', 'internet', 'law', 'literature', 'living',
+      'medicine', 'Microsoft', 'military', 'money', 'movies', 'music', 'Napster',
+      'nostalgia', 'politics', 'politicsdemocrats', 'politicsrepublicans',
+      'politicsdubya', 'politicstheclintons', 'printmedia', 'protest', 'race',
+      'religion', 'school', 'science', 'sick', 'space', 'sports', 'stocks',
+      'technology', 'television', 'terrorism', 'toys', 'travel', 'trends',
+      'tv_reality', 'ugly', 'uk', 'war', 'weird'
+    ];
+
+    const collageContainer = document.getElementById('image-collage');
+    const rows = 13;
+    const cols = 10;
+    const totalImages = rows * cols;
+
+    function getRandomCollageImage() {
+      const randomIndex = Math.floor(Math.random() * collageImages.length);
+      return `assets/plastic.com/${collageImages[randomIndex]}.gif`;
+    }
+
+    // Create the initial collage
+    for (let i = 0; i < totalImages; i++) {
+      const img = document.createElement('img');
+      img.src = getRandomCollageImage();
+      img.alt = '';
+      collageContainer.appendChild(img);
+    }
+
+    // Randomly cycle images every 50ms
+    setInterval(() => {
+      const images = collageContainer.getElementsByTagName('img');
+      if (images.length > 0) {
+        const randomIndex = Math.floor(Math.random() * images.length);
+        images[randomIndex].src = getRandomCollageImage();
       }
-
-      function changeAdImage() {
-        adImageElement.classList.remove('active');
-        
-        setTimeout(() => {
-          adImageElement.src = getRandomImage();
-          adImageElement.classList.add('active');
-        }, 250);
-      }
-
-      adImageElement.src = getRandomImage();
-      adImageElement.classList.add('active');
+    }, 50);
   </script>
 </body>
 </html>

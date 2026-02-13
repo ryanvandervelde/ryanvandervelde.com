@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eudemian Ethics | Ryan Vandervelde</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+  <div id="container">
+    <main id="main">
+      <h1>Eudemian Ethics</h1>
+      
+      <div class="bibliography">
+        <p>Aristotle. <em>Eudemian Ethics</em>. Translated by Brad Inwood and Raphael Woolf. Cambridge: Cambridge University Press, 2013.</p>
+      </div>
+      
+      <div class="quotes">
+        <blockquote>
+          <p>Happiness is the noblest, the best, and the most pleasant of human goods. <em>p.3</em></p>
+          <cite></cite>
+        </blockquote>
+      </div>
+    </main>
+
+    <nav class="sitemap">
+        <ul>
+            <li><a href="../index.html">home</a></li>
+            <li><a href="../about.html">about</a></li>
+            <li><a href="../page2.html">books</a></li>
+            <li><a href="../contact.html">contact</a></li>
+        </ul>
+    </nav>
+    
+    <div class="ad-banner">
+      <img id="ad-image" src="" alt="Advertisement">
+    </div>
+    
+    <footer id="footer">
+      <p>&copy; 2025 ryan vandervelde</p>
+      <div class="footer-logos">
+        <img src="../assets/freeloader.gif" alt="Freeloader">
+        <img src="../assets/cidlogo.gif" alt="CID Logo">
+        <img src="../assets/lycos.gif" alt="Lycos">
+        <img src="../assets/sunlogo.gif" alt="Sun Logo">
+      </div>
+    </footer>
+  </div>
+
+  <script>
+      const adImages = [
+        '../assets/hummer.gif',
+        '../assets/dealani.gif',
+        '../assets/flagmap.gif',
+        '../assets/main3rudolph.gif',
+        '../assets/cyberian_home.gif'
+      ];
+
+      let currentIndex = 0;
+      const adImageElement = document.getElementById('ad-image');
+
+      function getRandomImage() {
+        const randomIndex = Math.floor(Math.random() * adImages.length);
+        return adImages[randomIndex];
+      }
+
+      function changeAdImage() {
+        adImageElement.classList.remove('active');
+        
+        setTimeout(() => {
+          adImageElement.src = getRandomImage();
+          adImageElement.classList.add('active');
+        }, 250);
+      }
+
+      adImageElement.src = getRandomImage();
+      adImageElement.classList.add('active');
+  </script>
+</body>
+</html>

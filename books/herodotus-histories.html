@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Histories | Ryan Vandervelde</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+  <div id="container">
+    <main id="main">
+      <h1>The Histories</h1>
+      
+      <div class="bibliography">
+        <p>Herodotus. <em>The Histories</em>. Translated by Robin Waterfield. Oxford: Oxford University Press, 1998.</p>
+      </div>
+      
+      <div class="quotes">
+        <blockquote>
+          <p>Anyone who lives for a long time is bound to see and endure many thing he would rather avoid. I place the limit of a man's life at seventy years... So the sum total of all the days in seventy years is 26,250, but no two days bring events which are exactly the same. IT follows, Croesus, that human life is entirely a matter of chance. p.15</p>
+          <cite></cite>
+        </blockquote>
+      </div>
+    </main>
+
+    <nav class="sitemap">
+        <ul>
+            <li><a href="../index.html">home</a></li>
+            <li><a href="../about.html">about</a></li>
+            <li><a href="../page2.html">books</a></li>
+            <li><a href="../contact.html">contact</a></li>
+        </ul>
+    </nav>
+    
+    <div class="ad-banner">
+      <img id="ad-image" src="" alt="Advertisement">
+    </div>
+    
+    <footer id="footer">
+      <p>&copy; 2025 ryan vandervelde</p>
+      <div class="footer-logos">
+        <img src="../assets/freeloader.gif" alt="Freeloader">
+        <img src="../assets/cidlogo.gif" alt="CID Logo">
+        <img src="../assets/lycos.gif" alt="Lycos">
+        <img src="../assets/sunlogo.gif" alt="Sun Logo">
+      </div>
+    </footer>
+  </div>
+
+  <script>
+      const adImages = [
+        '../assets/hummer.gif',
+        '../assets/dealani.gif',
+        '../assets/flagmap.gif',
+        '../assets/main3rudolph.gif',
+        '../assets/cyberian_home.gif'
+      ];
+
+      let currentIndex = 0;
+      const adImageElement = document.getElementById('ad-image');
+
+      function getRandomImage() {
+        const randomIndex = Math.floor(Math.random() * adImages.length);
+        return adImages[randomIndex];
+      }
+
+      function changeAdImage() {
+        adImageElement.classList.remove('active');
+        
+        setTimeout(() => {
+          adImageElement.src = getRandomImage();
+          adImageElement.classList.add('active');
+        }, 250);
+      }
+
+      adImageElement.src = getRandomImage();
+      adImageElement.classList.add('active');
+  </script>
+</body>
+</html>
